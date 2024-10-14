@@ -1,0 +1,71 @@
+══════════════════════
+npx cdk deploy  hosting-connection-serverless-pdf-chat-main-jigsawml --context config-path=/root/Projects/Jigsawml/serverless-pdf-chat/cloudfront-hosting-toolkit   
+
+
+══════════════════════
+
+[WARNING] aws-cdk-lib.aws_cloudfront_origins.S3Origin is deprecated.
+  Use `S3BucketOrigin` or `S3StaticWebsiteOrigin` instead.
+  This API will be removed in the next major release.
+[WARNING] aws-cdk-lib.aws_cloudfront_origins.S3Origin#bind is deprecated.
+  Use `S3BucketOrigin` or `S3StaticWebsiteOrigin` instead.
+  This API will be removed in the next major release.
+
+✨  Synthesis time: 0.99s
+
+hosting-connection-serverless-pdf-chat-main-jigsawml: start: Building d922143427186007b13b15e1ad284fa35b761efd3d91ff0a6deb5e3522ec55aa:692859938530-us-east-1
+hosting-connection-serverless-pdf-chat-main-jigsawml: success: Built d922143427186007b13b15e1ad284fa35b761efd3d91ff0a6deb5e3522ec55aa:692859938530-us-east-1
+hosting-connection-serverless-pdf-chat-main-jigsawml: start: Publishing d922143427186007b13b15e1ad284fa35b761efd3d91ff0a6deb5e3522ec55aa:692859938530-us-east-1
+hosting-connection-serverless-pdf-chat-main-jigsawml: success: Published d922143427186007b13b15e1ad284fa35b761efd3d91ff0a6deb5e3522ec55aa:692859938530-us-east-1
+Stack undefined
+hosting-connection-serverless-pdf-chat-main-jigsawml: deploying... [1/1]
+hosting-connection-serverless-pdf-chat-main-jigsawml: creating CloudFormation changeset...
+hosting-connection-serverless-pdf-chat-main-jigsawml | 0/6 | 8:31:30 PM | REVIEW_IN_PROGRESS   | AWS::CloudFormation::Stack           | hosting-connection-serverless-pdf-chat-main-jigsawml User Initiated
+hosting-connection-serverless-pdf-chat-main-jigsawml | 0/6 | 8:31:36 PM | CREATE_IN_PROGRESS   | AWS::CloudFormation::Stack           | hosting-connection-serverless-pdf-chat-main-jigsawml User Initiated
+hosting-connection-serverless-pdf-chat-main-jigsawml | 0/6 | 8:31:38 PM | CREATE_IN_PROGRESS   | AWS::CodeStarConnections::Connection | RepositoryConnection/MyCfnConnectionserverless-pdf-chat (RepositoryConnectionMyCfnConnectionserverlesspdfchatEA7A6833) 
+hosting-connection-serverless-pdf-chat-main-jigsawml | 0/6 | 8:31:38 PM | CREATE_IN_PROGRESS   | AWS::SSM::Parameter                  | RepositoryConnection/SSMConnectionRegion (RepositoryConnectionSSMConnectionRegion4029CE52) 
+hosting-connection-serverless-pdf-chat-main-jigsawml | 0/6 | 8:31:38 PM | CREATE_IN_PROGRESS   | AWS::SSM::Parameter                  | RepositoryConnection/SSMConnectionName (RepositoryConnectionSSMConnectionNameAB648C27) 
+hosting-connection-serverless-pdf-chat-main-jigsawml | 0/6 | 8:31:38 PM | CREATE_IN_PROGRESS   | AWS::CDK::Metadata                   | CDKMetadata/Default (CDKMetadata) 
+hosting-connection-serverless-pdf-chat-main-jigsawml | 0/6 | 8:31:39 PM | CREATE_IN_PROGRESS   | AWS::CodeStarConnections::Connection | RepositoryConnection/MyCfnConnectionserverless-pdf-chat (RepositoryConnectionMyCfnConnectionserverlesspdfchatEA7A6833) Resource creation Initiated
+hosting-connection-serverless-pdf-chat-main-jigsawml | 0/6 | 8:31:39 PM | CREATE_IN_PROGRESS   | AWS::SSM::Parameter                  | RepositoryConnection/SSMConnectionName (RepositoryConnectionSSMConnectionNameAB648C27) Resource creation Initiated
+hosting-connection-serverless-pdf-chat-main-jigsawml | 0/6 | 8:31:39 PM | CREATE_IN_PROGRESS   | AWS::SSM::Parameter                  | RepositoryConnection/SSMConnectionRegion (RepositoryConnectionSSMConnectionRegion4029CE52) Resource creation Initiated
+hosting-connection-serverless-pdf-chat-main-jigsawml | 0/6 | 8:31:40 PM | CREATE_IN_PROGRESS   | AWS::CDK::Metadata                   | CDKMetadata/Default (CDKMetadata) Resource creation Initiated
+hosting-connection-serverless-pdf-chat-main-jigsawml | 1/6 | 8:31:40 PM | CREATE_COMPLETE      | AWS::CodeStarConnections::Connection | RepositoryConnection/MyCfnConnectionserverless-pdf-chat (RepositoryConnectionMyCfnConnectionserverlesspdfchatEA7A6833) 
+hosting-connection-serverless-pdf-chat-main-jigsawml | 2/6 | 8:31:40 PM | CREATE_COMPLETE      | AWS::CDK::Metadata                   | CDKMetadata/Default (CDKMetadata) 
+hosting-connection-serverless-pdf-chat-main-jigsawml | 3/6 | 8:31:40 PM | CREATE_COMPLETE      | AWS::SSM::Parameter                  | RepositoryConnection/SSMConnectionName (RepositoryConnectionSSMConnectionNameAB648C27) 
+hosting-connection-serverless-pdf-chat-main-jigsawml | 4/6 | 8:31:40 PM | CREATE_COMPLETE      | AWS::SSM::Parameter                  | RepositoryConnection/SSMConnectionRegion (RepositoryConnectionSSMConnectionRegion4029CE52) 
+hosting-connection-serverless-pdf-chat-main-jigsawml | 4/6 | 8:31:40 PM | CREATE_IN_PROGRESS   | AWS::SSM::Parameter                  | RepositoryConnection/SSMConnectionArn (RepositoryConnectionSSMConnectionArn1E74102B) 
+hosting-connection-serverless-pdf-chat-main-jigsawml | 4/6 | 8:31:41 PM | CREATE_IN_PROGRESS   | AWS::SSM::Parameter                  | RepositoryConnection/SSMConnectionArn (RepositoryConnectionSSMConnectionArn1E74102B) Resource creation Initiated
+hosting-connection-serverless-pdf-chat-main-jigsawml | 5/6 | 8:31:42 PM | CREATE_COMPLETE      | AWS::SSM::Parameter                  | RepositoryConnection/SSMConnectionArn (RepositoryConnectionSSMConnectionArn1E74102B) 
+hosting-connection-serverless-pdf-chat-main-jigsawml | 6/6 | 8:31:47 PM | CREATE_COMPLETE      | AWS::CloudFormation::Stack           | hosting-connection-serverless-pdf-chat-main-jigsawml 
+
+ ✅  hosting-connection-serverless-pdf-chat-main-jigsawml
+
+✨  Deployment time: 23.19s
+
+Outputs:
+hosting-connection-serverless-pdf-chat-main-jigsawml.ExportsOutputFnGetAttRepositoryConnectionMyCfnConnectionserverlesspdfchatEA7A6833ConnectionArnBCF1EF2A = arn:aws:codestar-connections:us-east-1:692859938530:connection/463a1a73-e0d0-483a-87c0-18109df5556b
+hosting-connection-serverless-pdf-chat-main-jigsawml.RepositoryConnectionConnectionArn087CB8E2 = arn:aws:codestar-connections:us-east-1:692859938530:connection/463a1a73-e0d0-483a-87c0-18109df5556b
+hosting-connection-serverless-pdf-chat-main-jigsawml.RepositoryConnectionConnectionNameFD2EABB9 = serverless-pdf-chat-main-jigsawm
+hosting-connection-serverless-pdf-chat-main-jigsawml.RepositoryConnectionHostingRegion1B4A18AD = us-east-1
+Stack ARN:
+
+✨  Total time: 24.17s
+
+arn:aws:cloudformation:us-east-1:692859938530:stack/hosting-connection-serverless-pdf-chat-main-jigsawml/4b4cc1b0-8a6b-11ef-9836-0e2365b6cbe7
+
+NOTICES         (What's this? https://github.com/aws/aws-cdk/wiki/CLI-Notices)
+
+31654	(cli): validation errors detected: Value '' at 'stackName' 
+
+	Overview: A change was added to aws-cdk-lib to introduce a new cli
+	          command feature `cdk --rollback`. This change caused an
+	          issue with nested stacks deployment in CDK app. The
+	          workaround is pin CDK to an older version 2.160.0 or before.
+
+	Affected versions: cli: 2.161.0
+
+	More information at: https://github.com/aws/aws-cdk/issues/31654
+
+
+If you don’t want to see a notice anymore, use "cdk acknowledge <id>". For example, "cdk acknowledge 31654".

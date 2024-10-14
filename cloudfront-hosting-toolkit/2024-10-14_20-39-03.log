@@ -1,0 +1,264 @@
+══════════════════════
+npx cdk deploy hosting-main-serverless-pdf-chat-main  --context config-path=/root/Projects/Jigsawml/serverless-pdf-chat/cloudfront-hosting-toolkit --require-approval never 
+
+
+══════════════════════
+
+[WARNING] aws-cdk-lib.aws_cloudfront_origins.S3Origin is deprecated.
+  Use `S3BucketOrigin` or `S3StaticWebsiteOrigin` instead.
+  This API will be removed in the next major release.
+[WARNING] aws-cdk-lib.aws_cloudfront_origins.S3Origin#bind is deprecated.
+  Use `S3BucketOrigin` or `S3StaticWebsiteOrigin` instead.
+  This API will be removed in the next major release.
+Including dependency stacks: hosting-connection-serverless-pdf-chat-main-jigsawml
+[Warning at /hosting-main-serverless-pdf-chat-main/Hosting/PipelineInfrastructure/MyPipeline] V1 pipeline type is implicitly selected when `pipelineType` is not set. If you want to use V2 type, set `PipelineType.V2`. [ack: @aws-cdk/aws-codepipeline:unspecifiedPipelineType]
+
+✨  Synthesis time: 0.98s
+
+hosting-connection-serverless-pdf-chat-main-jigsawml
+hosting-connection-serverless-pdf-chat-main-jigsawml: deploying... [1/2]
+hosting-main-serverless-pdf-chat-main: start: Building 9569e8209a1de17ff8a9ebc178fe2248160ce9a4eed64a80fe5a104dbff6ea0a:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: success: Built 9569e8209a1de17ff8a9ebc178fe2248160ce9a4eed64a80fe5a104dbff6ea0a:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: start: Building 2767f42928b70c3d64260deadff7336e45dc0063707100243a479cb607712c39:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: success: Built 2767f42928b70c3d64260deadff7336e45dc0063707100243a479cb607712c39:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: start: Building 2819175352ad1ce0dae768e83fc328fb70fb5f10b4a8ff0ccbcb791f02b0716d:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: success: Built 2819175352ad1ce0dae768e83fc328fb70fb5f10b4a8ff0ccbcb791f02b0716d:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: start: Building ab5ef57228ed71e3445aa816e4d4b1d420b2d4da162c96add8c9cd17f72f57f3:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: success: Built ab5ef57228ed71e3445aa816e4d4b1d420b2d4da162c96add8c9cd17f72f57f3:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: start: Building 3f976aebf692cc9a0dcea3c98448e04a5394190cad4fd219bfada2c498098a5f:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: success: Built 3f976aebf692cc9a0dcea3c98448e04a5394190cad4fd219bfada2c498098a5f:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: start: Building c6358465bf49dfae556bb430bf9c81fa578c221b82c308e3707901b1dd654762:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: success: Built c6358465bf49dfae556bb430bf9c81fa578c221b82c308e3707901b1dd654762:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: start: Building cfe4d0f0adac1aa002d220801786009e5c2259f13b92bccb6b50e333da80b4ae:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: success: Built cfe4d0f0adac1aa002d220801786009e5c2259f13b92bccb6b50e333da80b4ae:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: start: Building faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: success: Built faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: start: Building 1b7aeb29b413623562246cedcebeb35a18cb62edaf403cdbabb7c0aaceb89b3e:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: success: Built 1b7aeb29b413623562246cedcebeb35a18cb62edaf403cdbabb7c0aaceb89b3e:692859938530-us-east-1
+
+ ✅  hosting-connection-serverless-pdf-chat-main-jigsawml (no changes)
+
+✨  Deployment time: 0.81s
+
+Outputs:
+hosting-connection-serverless-pdf-chat-main-jigsawml.ExportsOutputFnGetAttRepositoryConnectionMyCfnConnectionserverlesspdfchatEA7A6833ConnectionArnBCF1EF2A = arn:aws:codestar-connections:us-east-1:692859938530:connection/463a1a73-e0d0-483a-87c0-18109df5556b
+hosting-connection-serverless-pdf-chat-main-jigsawml.RepositoryConnectionConnectionArn087CB8E2 = arn:aws:codestar-connections:us-east-1:692859938530:connection/463a1a73-e0d0-483a-87c0-18109df5556b
+hosting-connection-serverless-pdf-chat-main-jigsawml.RepositoryConnectionConnectionNameFD2EABB9 = serverless-pdf-chat-main-jigsawm
+hosting-connection-serverless-pdf-chat-main-jigsawml.RepositoryConnectionHostingRegion1B4A18AD = us-east-1
+Stack ARN:
+
+✨  Total time: 1.79s
+
+arn:aws:cloudformation:us-east-1:692859938530:stack/hosting-connection-serverless-pdf-chat-main-jigsawml/4b4cc1b0-8a6b-11ef-9836-0e2365b6cbe7
+hosting-main-serverless-pdf-chat-main: start: Publishing 9569e8209a1de17ff8a9ebc178fe2248160ce9a4eed64a80fe5a104dbff6ea0a:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: start: Publishing 2767f42928b70c3d64260deadff7336e45dc0063707100243a479cb607712c39:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: start: Publishing 2819175352ad1ce0dae768e83fc328fb70fb5f10b4a8ff0ccbcb791f02b0716d:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: start: Publishing ab5ef57228ed71e3445aa816e4d4b1d420b2d4da162c96add8c9cd17f72f57f3:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: start: Publishing 3f976aebf692cc9a0dcea3c98448e04a5394190cad4fd219bfada2c498098a5f:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: start: Publishing c6358465bf49dfae556bb430bf9c81fa578c221b82c308e3707901b1dd654762:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: start: Publishing faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: start: Publishing cfe4d0f0adac1aa002d220801786009e5c2259f13b92bccb6b50e333da80b4ae:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: success: Published ab5ef57228ed71e3445aa816e4d4b1d420b2d4da162c96add8c9cd17f72f57f3:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: start: Publishing 1b7aeb29b413623562246cedcebeb35a18cb62edaf403cdbabb7c0aaceb89b3e:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: success: Published faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: success: Published c6358465bf49dfae556bb430bf9c81fa578c221b82c308e3707901b1dd654762:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: success: Published 2767f42928b70c3d64260deadff7336e45dc0063707100243a479cb607712c39:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: success: Published 2819175352ad1ce0dae768e83fc328fb70fb5f10b4a8ff0ccbcb791f02b0716d:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: success: Published cfe4d0f0adac1aa002d220801786009e5c2259f13b92bccb6b50e333da80b4ae:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: success: Published 1b7aeb29b413623562246cedcebeb35a18cb62edaf403cdbabb7c0aaceb89b3e:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: success: Published 3f976aebf692cc9a0dcea3c98448e04a5394190cad4fd219bfada2c498098a5f:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main: success: Published 9569e8209a1de17ff8a9ebc178fe2248160ce9a4eed64a80fe5a104dbff6ea0a:692859938530-us-east-1
+hosting-main-serverless-pdf-chat-main
+hosting-main-serverless-pdf-chat-main: deploying... [2/2]
+hosting-main-serverless-pdf-chat-main: creating CloudFormation changeset...
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:18 PM | REVIEW_IN_PROGRESS   | AWS::CloudFormation::Stack             | hosting-main-serverless-pdf-chat-main User Initiated
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:29 PM | CREATE_IN_PROGRESS   | AWS::CloudFormation::Stack             | hosting-main-serverless-pdf-chat-main User Initiated
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:34 PM | CREATE_IN_PROGRESS   | AWS::CloudFront::CachePolicy           | Hosting/HostingInfrastructure/DefaultCachePolicy (HostingHostingInfrastructureDefaultCachePolicy266661D2) 
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:34 PM | CREATE_IN_PROGRESS   | AWS::IAM::Role                         | Custom::S3AutoDeleteObjectsCustomResourceProvider/Role (CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092) 
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:34 PM | CREATE_IN_PROGRESS   | AWS::IAM::Role                         | Hosting/PipelineInfrastructure/Project/Role (HostingPipelineInfrastructureProjectRole0A86D4CE) 
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:34 PM | CREATE_IN_PROGRESS   | AWS::CloudFront::KeyValueStore         | Hosting/UriStore (HostingUriStoreC5D8CAEE) 
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:34 PM | CREATE_IN_PROGRESS   | AWS::CloudFront::ResponseHeadersPolicy | Hosting/HostingInfrastructure/ResponseHeadersPolicy (HostingHostingInfrastructureResponseHeadersPolicy630F57EC) 
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:34 PM | CREATE_IN_PROGRESS   | AWS::IAM::Role                         | LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole (LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB) 
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:34 PM | CREATE_IN_PROGRESS   | AWS::S3::Bucket                        | Hosting/PipelineInfrastructure/ArtifactBucket (HostingPipelineInfrastructureArtifactBucket000BDB60) 
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:34 PM | CREATE_IN_PROGRESS   | AWS::S3::Bucket                        | Hosting/HostingInfrastructure/HostingBucket (HostingHostingInfrastructureHostingBucketBB444313) 
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:34 PM | CREATE_IN_PROGRESS   | AWS::IAM::Role                         | Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole (CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265) 
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:34 PM | CREATE_IN_PROGRESS   | AWS::CloudFront::OriginAccessControl   | Hosting/HostingInfrastructure/OAC (HostingHostingInfrastructureOACF290641F) 
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:34 PM | CREATE_IN_PROGRESS   | AWS::Lambda::LayerVersion              | Hosting/PipelineInfrastructure/UpdateCFF/AwsSdkLayer (HostingPipelineInfrastructureUpdateCFFAwsSdkLayerEA1E386E) 
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:34 PM | CREATE_IN_PROGRESS   | AWS::Lambda::LayerVersion              | Hosting/PipelineInfrastructure/InitialPage/AwsCliLayer (HostingPipelineInfrastructureInitialPageAwsCliLayer9A51F97C) 
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:34 PM | CREATE_IN_PROGRESS   | AWS::Logs::LogGroup                    | Hosting/PipelineInfrastructure/MyLogGroup (HostingPipelineInfrastructureMyLogGroupF5049128) 
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:34 PM | CREATE_IN_PROGRESS   | AWS::IAM::Role                         | Hosting/PipelineInfrastructure/UpdateCFF/BasicLambdaRole (HostingPipelineInfrastructureUpdateCFFBasicLambdaRole6E5EC6AE) 
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:34 PM | CREATE_IN_PROGRESS   | AWS::IAM::Role                         | Hosting/PipelineInfrastructure/UpdateCFF/StaticHostingSF/Role (HostingPipelineInfrastructureUpdateCFFStaticHostingSFRoleC8BF2D67) 
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:34 PM | CREATE_IN_PROGRESS   | AWS::CDK::Metadata                     | CDKMetadata/Default (CDKMetadata) 
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:34 PM | CREATE_IN_PROGRESS   | AWS::CloudFront::CachePolicy           | Hosting/HostingInfrastructure/ImagesCachePolicy (HostingHostingInfrastructureImagesCachePolicyFF009C20) 
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:34 PM | CREATE_IN_PROGRESS   | AWS::CloudFront::CachePolicy           | Hosting/HostingInfrastructure/staticAssetsCachePolicy (HostingHostingInfrastructurestaticAssetsCachePolicy6B67ED12) 
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:34 PM | CREATE_IN_PROGRESS   | AWS::Logs::LogGroup                    | Hosting/PipelineInfrastructure/UpdateCFF/sfnLog (HostingPipelineInfrastructureUpdateCFFsfnLog3A570214) 
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:35 PM | CREATE_IN_PROGRESS   | AWS::IAM::Role                         | Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole (CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:35 PM | CREATE_IN_PROGRESS   | AWS::IAM::Role                         | Hosting/PipelineInfrastructure/Project/Role (HostingPipelineInfrastructureProjectRole0A86D4CE) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:35 PM | CREATE_IN_PROGRESS   | AWS::IAM::Role                         | Hosting/PipelineInfrastructure/UpdateCFF/BasicLambdaRole (HostingPipelineInfrastructureUpdateCFFBasicLambdaRole6E5EC6AE) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:35 PM | CREATE_IN_PROGRESS   | AWS::Logs::LogGroup                    | Hosting/PipelineInfrastructure/MyLogGroup (HostingPipelineInfrastructureMyLogGroupF5049128) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:35 PM | CREATE_IN_PROGRESS   | AWS::IAM::Role                         | Hosting/PipelineInfrastructure/UpdateCFF/StaticHostingSF/Role (HostingPipelineInfrastructureUpdateCFFStaticHostingSFRoleC8BF2D67) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:35 PM | CREATE_IN_PROGRESS   | AWS::CloudFront::ResponseHeadersPolicy | Hosting/HostingInfrastructure/ResponseHeadersPolicy (HostingHostingInfrastructureResponseHeadersPolicy630F57EC) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:35 PM | CREATE_IN_PROGRESS   | AWS::CloudFront::CachePolicy           | Hosting/HostingInfrastructure/DefaultCachePolicy (HostingHostingInfrastructureDefaultCachePolicy266661D2) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:35 PM | CREATE_IN_PROGRESS   | AWS::IAM::Role                         | Custom::S3AutoDeleteObjectsCustomResourceProvider/Role (CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:35 PM | CREATE_IN_PROGRESS   | AWS::IAM::Role                         | LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole (LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:35 PM | CREATE_IN_PROGRESS   | AWS::CDK::Metadata                     | CDKMetadata/Default (CDKMetadata) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main |  0/51 | 8:39:35 PM | CREATE_IN_PROGRESS   | AWS::Logs::LogGroup                    | Hosting/PipelineInfrastructure/UpdateCFF/sfnLog (HostingPipelineInfrastructureUpdateCFFsfnLog3A570214) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main |  1/51 | 8:39:35 PM | CREATE_COMPLETE      | AWS::CDK::Metadata                     | CDKMetadata/Default (CDKMetadata) 
+hosting-main-serverless-pdf-chat-main |  1/51 | 8:39:35 PM | CREATE_IN_PROGRESS   | AWS::CloudFront::CachePolicy           | Hosting/HostingInfrastructure/ImagesCachePolicy (HostingHostingInfrastructureImagesCachePolicyFF009C20) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main |  2/51 | 8:39:35 PM | CREATE_COMPLETE      | AWS::CloudFront::CachePolicy           | Hosting/HostingInfrastructure/DefaultCachePolicy (HostingHostingInfrastructureDefaultCachePolicy266661D2) 
+hosting-main-serverless-pdf-chat-main |  3/51 | 8:39:35 PM | CREATE_COMPLETE      | AWS::CloudFront::ResponseHeadersPolicy | Hosting/HostingInfrastructure/ResponseHeadersPolicy (HostingHostingInfrastructureResponseHeadersPolicy630F57EC) 
+hosting-main-serverless-pdf-chat-main |  3/51 | 8:39:36 PM | CREATE_IN_PROGRESS   | AWS::CloudFront::OriginAccessControl   | Hosting/HostingInfrastructure/OAC (HostingHostingInfrastructureOACF290641F) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main |  3/51 | 8:39:36 PM | CREATE_IN_PROGRESS   | AWS::S3::Bucket                        | Hosting/PipelineInfrastructure/ArtifactBucket (HostingPipelineInfrastructureArtifactBucket000BDB60) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main |  4/51 | 8:39:36 PM | CREATE_COMPLETE      | AWS::CloudFront::CachePolicy           | Hosting/HostingInfrastructure/ImagesCachePolicy (HostingHostingInfrastructureImagesCachePolicyFF009C20) 
+hosting-main-serverless-pdf-chat-main |  5/51 | 8:39:36 PM | CREATE_COMPLETE      | AWS::CloudFront::OriginAccessControl   | Hosting/HostingInfrastructure/OAC (HostingHostingInfrastructureOACF290641F) 
+hosting-main-serverless-pdf-chat-main |  5/51 | 8:39:36 PM | CREATE_IN_PROGRESS   | AWS::S3::Bucket                        | Hosting/HostingInfrastructure/HostingBucket (HostingHostingInfrastructureHostingBucketBB444313) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main |  5/51 | 8:39:36 PM | CREATE_IN_PROGRESS   | AWS::CloudFront::KeyValueStore         | Hosting/UriStore (HostingUriStoreC5D8CAEE) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main |  5/51 | 8:39:37 PM | CREATE_IN_PROGRESS   | AWS::CloudFront::KeyValueStore         | Hosting/UriStore (HostingUriStoreC5D8CAEE) Eventual consistency check initiated
+hosting-main-serverless-pdf-chat-main |  5/51 | 8:39:38 PM | CREATE_IN_PROGRESS   | AWS::CloudFront::Function              | Hosting/ChangeUri (HostingChangeUri1A688977) 
+hosting-main-serverless-pdf-chat-main |  5/51 | 8:39:40 PM | CREATE_IN_PROGRESS   | AWS::CloudFront::CachePolicy           | Hosting/HostingInfrastructure/staticAssetsCachePolicy (HostingHostingInfrastructurestaticAssetsCachePolicy6B67ED12) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main |  6/51 | 8:39:41 PM | CREATE_COMPLETE      | AWS::CloudFront::CachePolicy           | Hosting/HostingInfrastructure/staticAssetsCachePolicy (HostingHostingInfrastructurestaticAssetsCachePolicy6B67ED12) 
+hosting-main-serverless-pdf-chat-main |  6/51 | 8:39:41 PM | CREATE_IN_PROGRESS   | AWS::Lambda::LayerVersion              | Hosting/PipelineInfrastructure/UpdateCFF/AwsSdkLayer (HostingPipelineInfrastructureUpdateCFFAwsSdkLayerEA1E386E) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main |  7/51 | 8:39:41 PM | CREATE_COMPLETE      | AWS::Lambda::LayerVersion              | Hosting/PipelineInfrastructure/UpdateCFF/AwsSdkLayer (HostingPipelineInfrastructureUpdateCFFAwsSdkLayerEA1E386E) 
+hosting-main-serverless-pdf-chat-main |  8/51 | 8:39:42 PM | CREATE_COMPLETE      | AWS::Logs::LogGroup                    | Hosting/PipelineInfrastructure/MyLogGroup (HostingPipelineInfrastructureMyLogGroupF5049128) 
+hosting-main-serverless-pdf-chat-main |  9/51 | 8:39:42 PM | CREATE_COMPLETE      | AWS::Logs::LogGroup                    | Hosting/PipelineInfrastructure/UpdateCFF/sfnLog (HostingPipelineInfrastructureUpdateCFFsfnLog3A570214) 
+hosting-main-serverless-pdf-chat-main |  9/51 | 8:39:43 PM | CREATE_IN_PROGRESS   | AWS::Lambda::LayerVersion              | Hosting/PipelineInfrastructure/InitialPage/AwsCliLayer (HostingPipelineInfrastructureInitialPageAwsCliLayer9A51F97C) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 10/51 | 8:39:43 PM | CREATE_COMPLETE      | AWS::Lambda::LayerVersion              | Hosting/PipelineInfrastructure/InitialPage/AwsCliLayer (HostingPipelineInfrastructureInitialPageAwsCliLayer9A51F97C) 
+hosting-main-serverless-pdf-chat-main | 11/51 | 8:39:49 PM | CREATE_COMPLETE      | AWS::S3::Bucket                        | Hosting/PipelineInfrastructure/ArtifactBucket (HostingPipelineInfrastructureArtifactBucket000BDB60) 
+hosting-main-serverless-pdf-chat-main | 12/51 | 8:39:49 PM | CREATE_COMPLETE      | AWS::S3::Bucket                        | Hosting/HostingInfrastructure/HostingBucket (HostingHostingInfrastructureHostingBucketBB444313) 
+hosting-main-serverless-pdf-chat-main | 13/51 | 8:39:51 PM | CREATE_COMPLETE      | AWS::IAM::Role                         | Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole (CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265) 
+hosting-main-serverless-pdf-chat-main | 14/51 | 8:39:51 PM | CREATE_COMPLETE      | AWS::IAM::Role                         | Hosting/PipelineInfrastructure/Project/Role (HostingPipelineInfrastructureProjectRole0A86D4CE) 
+hosting-main-serverless-pdf-chat-main | 15/51 | 8:39:51 PM | CREATE_COMPLETE      | AWS::IAM::Role                         | Hosting/PipelineInfrastructure/UpdateCFF/StaticHostingSF/Role (HostingPipelineInfrastructureUpdateCFFStaticHostingSFRoleC8BF2D67) 
+hosting-main-serverless-pdf-chat-main | 16/51 | 8:39:51 PM | CREATE_COMPLETE      | AWS::IAM::Role                         | LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole (LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB) 
+hosting-main-serverless-pdf-chat-main | 17/51 | 8:39:51 PM | CREATE_COMPLETE      | AWS::IAM::Role                         | Hosting/PipelineInfrastructure/UpdateCFF/BasicLambdaRole (HostingPipelineInfrastructureUpdateCFFBasicLambdaRole6E5EC6AE) 
+hosting-main-serverless-pdf-chat-main | 18/51 | 8:39:51 PM | CREATE_COMPLETE      | AWS::IAM::Role                         | Custom::S3AutoDeleteObjectsCustomResourceProvider/Role (CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092) 
+hosting-main-serverless-pdf-chat-main | 18/51 | 8:39:52 PM | CREATE_IN_PROGRESS   | AWS::IAM::Policy                       | LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy (LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB) 
+hosting-main-serverless-pdf-chat-main | 18/51 | 8:39:52 PM | CREATE_IN_PROGRESS   | AWS::CodeBuild::Project                | Hosting/PipelineInfrastructure/Project (HostingPipelineInfrastructureProject873982A1) 
+hosting-main-serverless-pdf-chat-main | 18/51 | 8:39:52 PM | CREATE_IN_PROGRESS   | AWS::Lambda::Function                  | Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler (CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F) 
+hosting-main-serverless-pdf-chat-main | 18/51 | 8:39:53 PM | CREATE_IN_PROGRESS   | AWS::IAM::Policy                       | Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy (CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF) 
+hosting-main-serverless-pdf-chat-main | 18/51 | 8:39:53 PM | CREATE_IN_PROGRESS   | AWS::IAM::Policy                       | Hosting/PipelineInfrastructure/UpdateCFF/BasicLambdaRole/DefaultPolicy (HostingPipelineInfrastructureUpdateCFFBasicLambdaRoleDefaultPolicy58B6752A) 
+hosting-main-serverless-pdf-chat-main | 18/51 | 8:39:53 PM | CREATE_IN_PROGRESS   | AWS::IAM::Policy                       | LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy (LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 18/51 | 8:39:53 PM | CREATE_IN_PROGRESS   | AWS::CodeBuild::Project                | Hosting/PipelineInfrastructure/Project (HostingPipelineInfrastructureProject873982A1) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 18/51 | 8:39:54 PM | CREATE_IN_PROGRESS   | AWS::IAM::Policy                       | Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy (CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 18/51 | 8:39:54 PM | CREATE_IN_PROGRESS   | AWS::Lambda::Function                  | Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler (CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 18/51 | 8:39:54 PM | CREATE_IN_PROGRESS   | AWS::IAM::Policy                       | Hosting/PipelineInfrastructure/UpdateCFF/BasicLambdaRole/DefaultPolicy (HostingPipelineInfrastructureUpdateCFFBasicLambdaRoleDefaultPolicy58B6752A) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 19/51 | 8:39:54 PM | CREATE_COMPLETE      | AWS::CodeBuild::Project                | Hosting/PipelineInfrastructure/Project (HostingPipelineInfrastructureProject873982A1) 
+hosting-main-serverless-pdf-chat-main | 19/51 | 8:39:54 PM | CREATE_IN_PROGRESS   | AWS::Lambda::Function                  | Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler (CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F) Eventual consistency check initiated
+hosting-main-serverless-pdf-chat-main | 19/51 | 8:39:55 PM | CREATE_IN_PROGRESS   | AWS::IAM::Policy                       | Hosting/PipelineInfrastructure/Project/Role/DefaultPolicy (HostingPipelineInfrastructureProjectRoleDefaultPolicyC3411297) 
+hosting-main-serverless-pdf-chat-main | 19/51 | 8:39:56 PM | CREATE_IN_PROGRESS   | AWS::IAM::Policy                       | Hosting/PipelineInfrastructure/Project/Role/DefaultPolicy (HostingPipelineInfrastructureProjectRoleDefaultPolicyC3411297) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 20/51 | 8:39:59 PM | CREATE_COMPLETE      | AWS::Lambda::Function                  | Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler (CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F) 
+hosting-main-serverless-pdf-chat-main | 21/51 | 8:40:09 PM | CREATE_COMPLETE      | AWS::IAM::Policy                       | LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy (LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB) 
+hosting-main-serverless-pdf-chat-main | 22/51 | 8:40:09 PM | CREATE_COMPLETE      | AWS::IAM::Policy                       | Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy (CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF) 
+hosting-main-serverless-pdf-chat-main | 23/51 | 8:40:09 PM | CREATE_COMPLETE      | AWS::IAM::Policy                       | Hosting/PipelineInfrastructure/UpdateCFF/BasicLambdaRole/DefaultPolicy (HostingPipelineInfrastructureUpdateCFFBasicLambdaRoleDefaultPolicy58B6752A) 
+hosting-main-serverless-pdf-chat-main | 23/51 | 8:40:10 PM | CREATE_IN_PROGRESS   | AWS::Lambda::Function                  | LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a (LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A) 
+hosting-main-serverless-pdf-chat-main | 23/51 | 8:40:10 PM | CREATE_IN_PROGRESS   | AWS::Lambda::Function                  | Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C (CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536) 
+hosting-main-serverless-pdf-chat-main | 23/51 | 8:40:12 PM | CREATE_IN_PROGRESS   | AWS::Lambda::Function                  | LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a (LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 23/51 | 8:40:12 PM | CREATE_IN_PROGRESS   | AWS::Lambda::Function                  | Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C (CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 24/51 | 8:40:12 PM | CREATE_COMPLETE      | AWS::IAM::Policy                       | Hosting/PipelineInfrastructure/Project/Role/DefaultPolicy (HostingPipelineInfrastructureProjectRoleDefaultPolicyC3411297) 
+hosting-main-serverless-pdf-chat-main | 24/51 | 8:40:12 PM | CREATE_IN_PROGRESS   | AWS::Lambda::Function                  | LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a (LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A) Eventual consistency check initiated
+hosting-main-serverless-pdf-chat-main | 24/51 | 8:40:13 PM | CREATE_IN_PROGRESS   | AWS::Lambda::Function                  | Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C (CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536) Eventual consistency check initiated
+hosting-main-serverless-pdf-chat-main | 25/51 | 8:40:17 PM | CREATE_COMPLETE      | AWS::Lambda::Function                  | LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a (LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A) 
+hosting-main-serverless-pdf-chat-main | 26/51 | 8:40:23 PM | CREATE_COMPLETE      | AWS::Lambda::Function                  | Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C (CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536) 
+hosting-main-serverless-pdf-chat-main | 26/51 | 8:40:24 PM | CREATE_IN_PROGRESS   | Custom::CDKBucketDeployment            | Hosting/PipelineInfrastructure/InitialPage/CustomResource/Default (HostingPipelineInfrastructureInitialPageCustomResource34A55526) 
+26/51 Currently in progress: hosting-main-serverless-pdf-chat-main, HostingUriStoreC5D8CAEE, HostingChangeUri1A688977, HostingPipelineInfrastructureInitialPageCustomResource34A55526
+hosting-main-serverless-pdf-chat-main | 27/51 | 8:41:07 PM | CREATE_COMPLETE      | AWS::CloudFront::KeyValueStore         | Hosting/UriStore (HostingUriStoreC5D8CAEE) 
+hosting-main-serverless-pdf-chat-main | 27/51 | 8:41:08 PM | CREATE_IN_PROGRESS   | AWS::Lambda::Function                  | Hosting/PipelineInfrastructure/UpdateCFF/DeleteOldDeployments (HostingPipelineInfrastructureUpdateCFFDeleteOldDeployments1E3F3EDE) 
+hosting-main-serverless-pdf-chat-main | 27/51 | 8:41:08 PM | CREATE_IN_PROGRESS   | AWS::Lambda::Function                  | Hosting/PipelineInfrastructure/UpdateCFF/UpdateKvsFunction (HostingPipelineInfrastructureUpdateCFFUpdateKvsFunction85F93F9D) 
+hosting-main-serverless-pdf-chat-main | 27/51 | 8:41:09 PM | CREATE_IN_PROGRESS   | Custom::CDKBucketDeployment            | Hosting/PipelineInfrastructure/InitialPage/CustomResource/Default (HostingPipelineInfrastructureInitialPageCustomResource34A55526) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 28/51 | 8:41:09 PM | CREATE_COMPLETE      | Custom::CDKBucketDeployment            | Hosting/PipelineInfrastructure/InitialPage/CustomResource/Default (HostingPipelineInfrastructureInitialPageCustomResource34A55526) 
+hosting-main-serverless-pdf-chat-main | 28/51 | 8:41:10 PM | CREATE_IN_PROGRESS   | AWS::Lambda::Function                  | Hosting/PipelineInfrastructure/UpdateCFF/DeleteOldDeployments (HostingPipelineInfrastructureUpdateCFFDeleteOldDeployments1E3F3EDE) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 28/51 | 8:41:10 PM | CREATE_IN_PROGRESS   | AWS::IAM::Role                         | Hosting/PipelineInfrastructure/MyPipeline/ChangeUri/Invoke/CodePipelineActionRole (HostingPipelineInfrastructureMyPipelineChangeUriInvokeCodePipelineActionRole87BB8ADC) 
+hosting-main-serverless-pdf-chat-main | 28/51 | 8:41:10 PM | CREATE_IN_PROGRESS   | AWS::IAM::Role                         | Hosting/PipelineInfrastructure/MyPipeline/Role (HostingPipelineInfrastructureMyPipelineRoleB18081B5) 
+hosting-main-serverless-pdf-chat-main | 28/51 | 8:41:10 PM | CREATE_IN_PROGRESS   | AWS::IAM::Role                         | Hosting/PipelineInfrastructure/MyPipeline/Sources/GitHub-Source-serverless-pdf-chat/CodePipelineActionRole (HostingPipelineInfrastructureMyPipelineSourcesGitHubSourceserverlesspdfchatCodePipelineActionRole33157E72) 
+hosting-main-serverless-pdf-chat-main | 28/51 | 8:41:10 PM | CREATE_IN_PROGRESS   | AWS::IAM::Role                         | Hosting/PipelineInfrastructure/MyPipeline/Build/Build-And-Copy-to-S3-serverless-pdf-chat/CodePipelineActionRole (HostingPipelineInfrastructureMyPipelineBuildBuildAndCopytoS3serverlesspdfchatCodePipelineActionRole354B293D) 
+hosting-main-serverless-pdf-chat-main | 28/51 | 8:41:10 PM | CREATE_IN_PROGRESS   | AWS::Lambda::Function                  | Hosting/PipelineInfrastructure/UpdateCFF/UpdateKvsFunction (HostingPipelineInfrastructureUpdateCFFUpdateKvsFunction85F93F9D) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 28/51 | 8:41:10 PM | CREATE_IN_PROGRESS   | AWS::CloudFront::Function              | Hosting/ChangeUri (HostingChangeUri1A688977) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 28/51 | 8:41:10 PM | CREATE_IN_PROGRESS   | AWS::Lambda::Function                  | Hosting/PipelineInfrastructure/UpdateCFF/DeleteOldDeployments (HostingPipelineInfrastructureUpdateCFFDeleteOldDeployments1E3F3EDE) Eventual consistency check initiated
+hosting-main-serverless-pdf-chat-main | 28/51 | 8:41:10 PM | CREATE_IN_PROGRESS   | AWS::IAM::Role                         | Hosting/PipelineInfrastructure/MyPipeline/Build/Build-And-Copy-to-S3-serverless-pdf-chat/CodePipelineActionRole (HostingPipelineInfrastructureMyPipelineBuildBuildAndCopytoS3serverlesspdfchatCodePipelineActionRole354B293D) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 28/51 | 8:41:11 PM | CREATE_IN_PROGRESS   | AWS::Lambda::Function                  | Hosting/PipelineInfrastructure/UpdateCFF/UpdateKvsFunction (HostingPipelineInfrastructureUpdateCFFUpdateKvsFunction85F93F9D) Eventual consistency check initiated
+hosting-main-serverless-pdf-chat-main | 28/51 | 8:41:11 PM | CREATE_IN_PROGRESS   | AWS::IAM::Role                         | Hosting/PipelineInfrastructure/MyPipeline/Sources/GitHub-Source-serverless-pdf-chat/CodePipelineActionRole (HostingPipelineInfrastructureMyPipelineSourcesGitHubSourceserverlesspdfchatCodePipelineActionRole33157E72) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 28/51 | 8:41:11 PM | CREATE_IN_PROGRESS   | AWS::IAM::Role                         | Hosting/PipelineInfrastructure/MyPipeline/ChangeUri/Invoke/CodePipelineActionRole (HostingPipelineInfrastructureMyPipelineChangeUriInvokeCodePipelineActionRole87BB8ADC) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 28/51 | 8:41:11 PM | CREATE_IN_PROGRESS   | AWS::IAM::Role                         | Hosting/PipelineInfrastructure/MyPipeline/Role (HostingPipelineInfrastructureMyPipelineRoleB18081B5) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 28/51 | 8:41:11 PM | CREATE_IN_PROGRESS   | AWS::IAM::Policy                       | Hosting/PipelineInfrastructure/UpdateCFF/StaticHostingSF/Role/DefaultPolicy (HostingPipelineInfrastructureUpdateCFFStaticHostingSFRoleDefaultPolicyE080F905) 
+hosting-main-serverless-pdf-chat-main | 28/51 | 8:41:12 PM | CREATE_IN_PROGRESS   | AWS::IAM::Policy                       | Hosting/PipelineInfrastructure/UpdateCFF/StaticHostingSF/Role/DefaultPolicy (HostingPipelineInfrastructureUpdateCFFStaticHostingSFRoleDefaultPolicyE080F905) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 29/51 | 8:41:15 PM | CREATE_COMPLETE      | AWS::Lambda::Function                  | Hosting/PipelineInfrastructure/UpdateCFF/DeleteOldDeployments (HostingPipelineInfrastructureUpdateCFFDeleteOldDeployments1E3F3EDE) 
+hosting-main-serverless-pdf-chat-main | 29/51 | 8:41:16 PM | CREATE_IN_PROGRESS   | Custom::LogRetention                   | Hosting/PipelineInfrastructure/UpdateCFF/DeleteOldDeployments/LogRetention (HostingPipelineInfrastructureUpdateCFFDeleteOldDeploymentsLogRetentionA1B2D84E) 
+hosting-main-serverless-pdf-chat-main | 30/51 | 8:41:19 PM | CREATE_COMPLETE      | AWS::CloudFront::Function              | Hosting/ChangeUri (HostingChangeUri1A688977) 
+hosting-main-serverless-pdf-chat-main | 30/51 | 8:41:19 PM | CREATE_IN_PROGRESS   | Custom::LogRetention                   | Hosting/PipelineInfrastructure/UpdateCFF/DeleteOldDeployments/LogRetention (HostingPipelineInfrastructureUpdateCFFDeleteOldDeploymentsLogRetentionA1B2D84E) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 31/51 | 8:41:19 PM | CREATE_COMPLETE      | Custom::LogRetention                   | Hosting/PipelineInfrastructure/UpdateCFF/DeleteOldDeployments/LogRetention (HostingPipelineInfrastructureUpdateCFFDeleteOldDeploymentsLogRetentionA1B2D84E) 
+hosting-main-serverless-pdf-chat-main | 32/51 | 8:41:21 PM | CREATE_COMPLETE      | AWS::Lambda::Function                  | Hosting/PipelineInfrastructure/UpdateCFF/UpdateKvsFunction (HostingPipelineInfrastructureUpdateCFFUpdateKvsFunction85F93F9D) 
+hosting-main-serverless-pdf-chat-main | 32/51 | 8:41:21 PM | CREATE_IN_PROGRESS   | AWS::CloudFront::Distribution          | Hosting/HostingInfrastructure/Distribution (HostingHostingInfrastructureDistribution2FE26CAE) 
+hosting-main-serverless-pdf-chat-main | 32/51 | 8:41:22 PM | CREATE_IN_PROGRESS   | Custom::LogRetention                   | Hosting/PipelineInfrastructure/UpdateCFF/UpdateKvsFunction/LogRetention (HostingPipelineInfrastructureUpdateCFFUpdateKvsFunctionLogRetentionCCFB0174) 
+hosting-main-serverless-pdf-chat-main | 32/51 | 8:41:24 PM | CREATE_IN_PROGRESS   | Custom::LogRetention                   | Hosting/PipelineInfrastructure/UpdateCFF/UpdateKvsFunction/LogRetention (HostingPipelineInfrastructureUpdateCFFUpdateKvsFunctionLogRetentionCCFB0174) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 33/51 | 8:41:24 PM | CREATE_COMPLETE      | Custom::LogRetention                   | Hosting/PipelineInfrastructure/UpdateCFF/UpdateKvsFunction/LogRetention (HostingPipelineInfrastructureUpdateCFFUpdateKvsFunctionLogRetentionCCFB0174) 
+hosting-main-serverless-pdf-chat-main | 33/51 | 8:41:24 PM | CREATE_IN_PROGRESS   | AWS::CloudFront::Distribution          | Hosting/HostingInfrastructure/Distribution (HostingHostingInfrastructureDistribution2FE26CAE) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 33/51 | 8:41:25 PM | CREATE_IN_PROGRESS   | AWS::CloudFront::Distribution          | Hosting/HostingInfrastructure/Distribution (HostingHostingInfrastructureDistribution2FE26CAE) Eventual consistency check initiated
+hosting-main-serverless-pdf-chat-main | 33/51 | 8:41:26 PM | CREATE_IN_PROGRESS   | AWS::SSM::Parameter                    | Hosting/HostingInfrastructure/SSMConnectionRegion (HostingHostingInfrastructureSSMConnectionRegionA72A0577) 
+hosting-main-serverless-pdf-chat-main | 34/51 | 8:41:27 PM | CREATE_COMPLETE      | AWS::IAM::Role                         | Hosting/PipelineInfrastructure/MyPipeline/Build/Build-And-Copy-to-S3-serverless-pdf-chat/CodePipelineActionRole (HostingPipelineInfrastructureMyPipelineBuildBuildAndCopytoS3serverlesspdfchatCodePipelineActionRole354B293D) 
+hosting-main-serverless-pdf-chat-main | 35/51 | 8:41:27 PM | CREATE_COMPLETE      | AWS::IAM::Role                         | Hosting/PipelineInfrastructure/MyPipeline/ChangeUri/Invoke/CodePipelineActionRole (HostingPipelineInfrastructureMyPipelineChangeUriInvokeCodePipelineActionRole87BB8ADC) 
+hosting-main-serverless-pdf-chat-main | 36/51 | 8:41:27 PM | CREATE_COMPLETE      | AWS::IAM::Role                         | Hosting/PipelineInfrastructure/MyPipeline/Role (HostingPipelineInfrastructureMyPipelineRoleB18081B5) 
+hosting-main-serverless-pdf-chat-main | 36/51 | 8:41:27 PM | CREATE_IN_PROGRESS   | AWS::SSM::Parameter                    | Hosting/HostingInfrastructure/SSMConnectionRegion (HostingHostingInfrastructureSSMConnectionRegionA72A0577) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 37/51 | 8:41:27 PM | CREATE_COMPLETE      | AWS::IAM::Role                         | Hosting/PipelineInfrastructure/MyPipeline/Sources/GitHub-Source-serverless-pdf-chat/CodePipelineActionRole (HostingPipelineInfrastructureMyPipelineSourcesGitHubSourceserverlesspdfchatCodePipelineActionRole33157E72) 
+hosting-main-serverless-pdf-chat-main | 38/51 | 8:41:27 PM | CREATE_COMPLETE      | AWS::SSM::Parameter                    | Hosting/HostingInfrastructure/SSMConnectionRegion (HostingHostingInfrastructureSSMConnectionRegionA72A0577) 
+hosting-main-serverless-pdf-chat-main | 38/51 | 8:41:28 PM | CREATE_IN_PROGRESS   | AWS::IAM::Policy                       | Hosting/PipelineInfrastructure/MyPipeline/Sources/GitHub-Source-serverless-pdf-chat/CodePipelineActionRole/DefaultPolicy (HostingPipelineInfrastructureMyPipelineSourcesGitHubSourceserverlesspdfchatCodePipelineActionRoleDefaultPolicy97757FB8) 
+hosting-main-serverless-pdf-chat-main | 39/51 | 8:41:28 PM | CREATE_COMPLETE      | AWS::IAM::Policy                       | Hosting/PipelineInfrastructure/UpdateCFF/StaticHostingSF/Role/DefaultPolicy (HostingPipelineInfrastructureUpdateCFFStaticHostingSFRoleDefaultPolicyE080F905) 
+hosting-main-serverless-pdf-chat-main | 39/51 | 8:41:28 PM | CREATE_IN_PROGRESS   | AWS::IAM::Policy                       | Hosting/PipelineInfrastructure/MyPipeline/Build/Build-And-Copy-to-S3-serverless-pdf-chat/CodePipelineActionRole/DefaultPolicy (HostingPipelineInfrastructureMyPipelineBuildBuildAndCopytoS3serverlesspdfchatCodePipelineActionRoleDefaultPolicyAC65CA26) 
+hosting-main-serverless-pdf-chat-main | 39/51 | 8:41:28 PM | CREATE_IN_PROGRESS   | AWS::S3::BucketPolicy                  | Hosting/PipelineInfrastructure/ArtifactBucket/Policy (HostingPipelineInfrastructureArtifactBucketPolicy55FE49F0) 
+hosting-main-serverless-pdf-chat-main | 39/51 | 8:41:28 PM | CREATE_IN_PROGRESS   | AWS::IAM::Policy                       | Hosting/PipelineInfrastructure/MyPipeline/Sources/GitHub-Source-serverless-pdf-chat/CodePipelineActionRole/DefaultPolicy (HostingPipelineInfrastructureMyPipelineSourcesGitHubSourceserverlesspdfchatCodePipelineActionRoleDefaultPolicy97757FB8) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 39/51 | 8:41:28 PM | CREATE_IN_PROGRESS   | AWS::IAM::Policy                       | Hosting/PipelineInfrastructure/MyPipeline/Role/DefaultPolicy (HostingPipelineInfrastructureMyPipelineRoleDefaultPolicy804931F0) 
+hosting-main-serverless-pdf-chat-main | 39/51 | 8:41:29 PM | CREATE_IN_PROGRESS   | AWS::IAM::Policy                       | Hosting/PipelineInfrastructure/MyPipeline/Build/Build-And-Copy-to-S3-serverless-pdf-chat/CodePipelineActionRole/DefaultPolicy (HostingPipelineInfrastructureMyPipelineBuildBuildAndCopytoS3serverlesspdfchatCodePipelineActionRoleDefaultPolicyAC65CA26) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 39/51 | 8:41:29 PM | CREATE_IN_PROGRESS   | AWS::StepFunctions::StateMachine       | Hosting/PipelineInfrastructure/UpdateCFF/StaticHostingSF (HostingPipelineInfrastructureUpdateCFFStaticHostingSF1C3F6163) 
+hosting-main-serverless-pdf-chat-main | 39/51 | 8:41:29 PM | CREATE_IN_PROGRESS   | AWS::S3::BucketPolicy                  | Hosting/PipelineInfrastructure/ArtifactBucket/Policy (HostingPipelineInfrastructureArtifactBucketPolicy55FE49F0) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 40/51 | 8:41:29 PM | CREATE_COMPLETE      | AWS::S3::BucketPolicy                  | Hosting/PipelineInfrastructure/ArtifactBucket/Policy (HostingPipelineInfrastructureArtifactBucketPolicy55FE49F0) 
+hosting-main-serverless-pdf-chat-main | 40/51 | 8:41:29 PM | CREATE_IN_PROGRESS   | AWS::IAM::Policy                       | Hosting/PipelineInfrastructure/MyPipeline/Role/DefaultPolicy (HostingPipelineInfrastructureMyPipelineRoleDefaultPolicy804931F0) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 40/51 | 8:41:30 PM | CREATE_IN_PROGRESS   | Custom::S3AutoDeleteObjects            | Hosting/PipelineInfrastructure/ArtifactBucket/AutoDeleteObjectsCustomResource/Default (HostingPipelineInfrastructureArtifactBucketAutoDeleteObjectsCustomResource8CA26117) 
+hosting-main-serverless-pdf-chat-main | 40/51 | 8:41:30 PM | CREATE_IN_PROGRESS   | AWS::StepFunctions::StateMachine       | Hosting/PipelineInfrastructure/UpdateCFF/StaticHostingSF (HostingPipelineInfrastructureUpdateCFFStaticHostingSF1C3F6163) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 41/51 | 8:41:30 PM | CREATE_COMPLETE      | AWS::StepFunctions::StateMachine       | Hosting/PipelineInfrastructure/UpdateCFF/StaticHostingSF (HostingPipelineInfrastructureUpdateCFFStaticHostingSF1C3F6163) 
+hosting-main-serverless-pdf-chat-main | 41/51 | 8:41:31 PM | CREATE_IN_PROGRESS   | AWS::IAM::Policy                       | Hosting/PipelineInfrastructure/MyPipeline/ChangeUri/Invoke/CodePipelineActionRole/DefaultPolicy (HostingPipelineInfrastructureMyPipelineChangeUriInvokeCodePipelineActionRoleDefaultPolicyE3E98FC9) 
+hosting-main-serverless-pdf-chat-main | 41/51 | 8:41:32 PM | CREATE_IN_PROGRESS   | AWS::IAM::Policy                       | Hosting/PipelineInfrastructure/MyPipeline/ChangeUri/Invoke/CodePipelineActionRole/DefaultPolicy (HostingPipelineInfrastructureMyPipelineChangeUriInvokeCodePipelineActionRoleDefaultPolicyE3E98FC9) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 41/51 | 8:41:33 PM | CREATE_IN_PROGRESS   | Custom::S3AutoDeleteObjects            | Hosting/PipelineInfrastructure/ArtifactBucket/AutoDeleteObjectsCustomResource/Default (HostingPipelineInfrastructureArtifactBucketAutoDeleteObjectsCustomResource8CA26117) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 42/51 | 8:41:33 PM | CREATE_COMPLETE      | Custom::S3AutoDeleteObjects            | Hosting/PipelineInfrastructure/ArtifactBucket/AutoDeleteObjectsCustomResource/Default (HostingPipelineInfrastructureArtifactBucketAutoDeleteObjectsCustomResource8CA26117) 
+hosting-main-serverless-pdf-chat-main | 43/51 | 8:41:44 PM | CREATE_COMPLETE      | AWS::IAM::Policy                       | Hosting/PipelineInfrastructure/MyPipeline/Sources/GitHub-Source-serverless-pdf-chat/CodePipelineActionRole/DefaultPolicy (HostingPipelineInfrastructureMyPipelineSourcesGitHubSourceserverlesspdfchatCodePipelineActionRoleDefaultPolicy97757FB8) 
+hosting-main-serverless-pdf-chat-main | 44/51 | 8:41:44 PM | CREATE_COMPLETE      | AWS::IAM::Policy                       | Hosting/PipelineInfrastructure/MyPipeline/Build/Build-And-Copy-to-S3-serverless-pdf-chat/CodePipelineActionRole/DefaultPolicy (HostingPipelineInfrastructureMyPipelineBuildBuildAndCopytoS3serverlesspdfchatCodePipelineActionRoleDefaultPolicyAC65CA26) 
+hosting-main-serverless-pdf-chat-main | 45/51 | 8:41:45 PM | CREATE_COMPLETE      | AWS::IAM::Policy                       | Hosting/PipelineInfrastructure/MyPipeline/Role/DefaultPolicy (HostingPipelineInfrastructureMyPipelineRoleDefaultPolicy804931F0) 
+hosting-main-serverless-pdf-chat-main | 45/51 | 8:41:46 PM | CREATE_IN_PROGRESS   | AWS::CodePipeline::Pipeline            | Hosting/PipelineInfrastructure/MyPipeline (HostingPipelineInfrastructureMyPipelineFC5FDDD0) 
+hosting-main-serverless-pdf-chat-main | 45/51 | 8:41:48 PM | CREATE_IN_PROGRESS   | AWS::CodePipeline::Pipeline            | Hosting/PipelineInfrastructure/MyPipeline (HostingPipelineInfrastructureMyPipelineFC5FDDD0) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 46/51 | 8:41:48 PM | CREATE_COMPLETE      | AWS::IAM::Policy                       | Hosting/PipelineInfrastructure/MyPipeline/ChangeUri/Invoke/CodePipelineActionRole/DefaultPolicy (HostingPipelineInfrastructureMyPipelineChangeUriInvokeCodePipelineActionRoleDefaultPolicyE3E98FC9) 
+hosting-main-serverless-pdf-chat-main | 47/51 | 8:41:48 PM | CREATE_COMPLETE      | AWS::CodePipeline::Pipeline            | Hosting/PipelineInfrastructure/MyPipeline (HostingPipelineInfrastructureMyPipelineFC5FDDD0) 
+hosting-main-serverless-pdf-chat-main | 47/51 | 8:41:48 PM | CREATE_IN_PROGRESS   | AWS::SSM::Parameter                    | Hosting/PipelineInfrastructure/SSMPipelineName (HostingPipelineInfrastructureSSMPipelineName8B6DD00A) 
+hosting-main-serverless-pdf-chat-main | 47/51 | 8:41:49 PM | CREATE_IN_PROGRESS   | AWS::SSM::Parameter                    | Hosting/PipelineInfrastructure/SSMPipelineName (HostingPipelineInfrastructureSSMPipelineName8B6DD00A) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 48/51 | 8:41:50 PM | CREATE_COMPLETE      | AWS::SSM::Parameter                    | Hosting/PipelineInfrastructure/SSMPipelineName (HostingPipelineInfrastructureSSMPipelineName8B6DD00A) 
+48/51 Currently in progress: hosting-main-serverless-pdf-chat-main, HostingHostingInfrastructureDistribution2FE26CAE
+hosting-main-serverless-pdf-chat-main | 49/51 | 8:44:52 PM | CREATE_COMPLETE      | AWS::CloudFront::Distribution          | Hosting/HostingInfrastructure/Distribution (HostingHostingInfrastructureDistribution2FE26CAE) 
+hosting-main-serverless-pdf-chat-main | 49/51 | 8:44:53 PM | CREATE_IN_PROGRESS   | AWS::S3::BucketPolicy                  | Hosting/HostingInfrastructure/HostingBucket/Policy (HostingHostingInfrastructureHostingBucketPolicy905DD8E2) 
+hosting-main-serverless-pdf-chat-main | 49/51 | 8:44:54 PM | CREATE_IN_PROGRESS   | AWS::S3::BucketPolicy                  | Hosting/HostingInfrastructure/HostingBucket/Policy (HostingHostingInfrastructureHostingBucketPolicy905DD8E2) Resource creation Initiated
+hosting-main-serverless-pdf-chat-main | 50/51 | 8:44:54 PM | CREATE_COMPLETE      | AWS::S3::BucketPolicy                  | Hosting/HostingInfrastructure/HostingBucket/Policy (HostingHostingInfrastructureHostingBucketPolicy905DD8E2) 
+hosting-main-serverless-pdf-chat-main | 51/51 | 8:44:56 PM | CREATE_COMPLETE      | AWS::CloudFormation::Stack             | hosting-main-serverless-pdf-chat-main 
+
+ ✅  hosting-main-serverless-pdf-chat-main
+
+✨  Deployment time: 344.5s
+
+Outputs:
+hosting-main-serverless-pdf-chat-main.HostingHostingInfrastructureDomainNameF9962E64 = https://d1k1r6ofyly45k.cloudfront.net
+hosting-main-serverless-pdf-chat-main.HostingPipelineInfrastructurePipelineNameC86AA64C = jigsawml-serverless-pdf-chat
+Stack ARN:
+
+✨  Total time: 345.48s
+
+arn:aws:cloudformation:us-east-1:692859938530:stack/hosting-main-serverless-pdf-chat-main/62486f30-8a6c-11ef-bcc5-0affd772fb61
+
+NOTICES         (What's this? https://github.com/aws/aws-cdk/wiki/CLI-Notices)
+
+31654	(cli): validation errors detected: Value '' at 'stackName' 
+
+	Overview: A change was added to aws-cdk-lib to introduce a new cli
+	          command feature `cdk --rollback`. This change caused an
+	          issue with nested stacks deployment in CDK app. The
+	          workaround is pin CDK to an older version 2.160.0 or before.
+
+	Affected versions: cli: 2.161.0
+
+	More information at: https://github.com/aws/aws-cdk/issues/31654
+
+
+If you don’t want to see a notice anymore, use "cdk acknowledge <id>". For example, "cdk acknowledge 31654".
