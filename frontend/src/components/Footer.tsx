@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
         <div className=" flex flex-row justify-between py-3 text-sm">
           <div className="inline-flex items-center">
             <CloudIcon className="w-5 h-5 mr-1.5" />
-            Powered by Amazon Web Servicess
+            Powered by Amazon Web Services
           </div>
           <div className="inline-flex items-center hover:underline underline-offset-2">
             <img
