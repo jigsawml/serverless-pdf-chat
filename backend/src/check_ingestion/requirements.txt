@@ -1,5 +1,3 @@
 boto3
 botocore
-langchain-community
-langchain-core
 aws-lambda-powertools

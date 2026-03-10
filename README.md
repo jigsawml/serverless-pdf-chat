@@ -17,9 +17,8 @@ See the [accompanying blog post on the AWS Serverless Blog](https://aws.amazon.c
 
 ## Key features
 
-- [Amazon Bedrock](https://aws.amazon.com/de/bedrock/) for serverless embedding and inference
-- [LangChain](https://github.com/hwchase17/langchain) to orchestrate a Q&A LLM chain
-- [FAISS](https://github.com/facebookresearch/faiss) vector store
+- [Amazon Bedrock](https://aws.amazon.com/de/bedrock/) for serverless embeddings, knowledge base retrieval, and inference
+- [Amazon Bedrock Knowledge Bases](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html) backed by an [Amazon OpenSearch Serverless](https://aws.amazon.com/opensearch-service/features/serverless/) vector collection
 - [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) for serverless conversational memory
 - [AWS Lambda](https://aws.amazon.com/lambda/) for serverless compute
 - Frontend built in [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [TailwindCSS](https://tailwindcss.com/), and [Vite](https://vitejs.dev/).
@@ -31,9 +30,9 @@ See the [accompanying blog post on the AWS Serverless Blog](https://aws.amazon.c
 ![Serverless PDF Chat architecture](architecture.png "Serverless PDF Chat architecture")
 
 1. A user uploads a PDF document into an [Amazon Simple Storage Service](https://aws.amazon.com/s3/) (S3) bucket through a static web application frontend.
-1. This upload triggers a metadata extraction and document embedding process. The process converts the text in the document into vectors. The vectors are loaded into a vector index and stored in S3 for later use.
-1. When a user chats with a PDF document and sends a prompt to the backend, a Lambda function retrieves the index from S3 and searches for information related to the prompt.
-1. A LLM then uses the results of this vector search, previous messages in the conversation, and its general-purpose capabilities to formulate a response to the user.
+1. This upload triggers a Lambda function that extracts basic metadata, creates a Bedrock Knowledge Base data source pointing at the document’s S3 prefix, and starts an ingestion job (chunking + embeddings into the vector store).
+1. When a user chats with a PDF document and sends a prompt to the backend, a Lambda function calls Bedrock **RetrieveAndGenerate** against the shared knowledge base, filtering on the document ID so only that document’s chunks are retrieved.
+1. A LLM then uses the retrieved context and the conversation history stored in DynamoDB to formulate a response to the user.
 
 ## Deployment instructions
 
