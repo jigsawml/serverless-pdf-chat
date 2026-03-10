@@ -81,103 +81,31 @@ Resources:
                 "aws:SecureTransport": "false"
       Bucket: !Ref DocumentBucket
 
-  # OpenSearch Serverless for Bedrock Knowledge Base vector store
-  OSSEncryptionPolicy:
-    Type: AWS::OpenSearchServerless::SecurityPolicy
+  EmbeddingQueue:
+    Type: AWS::SQS::Queue
+    DeletionPolicy: Delete
+    UpdateReplacePolicy: Delete
     Properties:
-      Name: !Sub "${AWS::StackName}-encryption"
-      Type: encryption
-      Description: Encryption policy for KB vector collection
-      Policy: !Sub >-
-        {"Rules":[{"ResourceType":"collection","Resource":["collection/${AWS::StackName}-kb-vectors"]}],"AWSOwnedKey":true}
+      VisibilityTimeout: 180
+      MessageRetentionPeriod: 3600
 
-  OSSNetworkPolicy:
-    Type: AWS::OpenSearchServerless::SecurityPolicy
+  EmbeddingQueuePolicy:
+    Type: AWS::SQS::QueuePolicy
     Properties:
-      Name: !Sub "${AWS::StackName}-network"
-      Type: network
-      Description: Network policy for KB vector collection
-      Policy: !Sub >-
-        [{"Rules":[{"ResourceType":"collection","Resource":["collection/${AWS::StackName}-kb-vectors"]},{"ResourceType":"dashboard","Resource":["collection/${AWS::StackName}-kb-vectors"]}],"AllowFromPublic":true}]
-
-  OSSCollection:
-    Type: AWS::OpenSearchServerless::Collection
-    Properties:
-      Name: !Sub "${AWS::StackName}-kb-vectors"
-      Type: VECTORSEARCH
-      Description: Vector store for serverless PDF chat knowledge base
-    DependsOn: OSSEncryptionPolicy
-
-  KnowledgeBaseRole:
-    Type: AWS::IAM::Role
-    Properties:
-      RoleName: !Sub "${AWS::StackName}-kb-role"
-      AssumeRolePolicyDocument:
-        Version: "2012-10-17"
-        Statement:
-          - Effect: Allow
-            Principal:
-              Service: bedrock.amazonaws.com
-            Action: sts:AssumeRole
-            Condition:
-              StringEquals:
-                aws:SourceAccount: !Ref AWS::AccountId
-              ArnLike:
-                aws:SourceArn: !Sub "arn:aws:bedrock:${AWS::Region}:${AWS::AccountId}:knowledge-base/*"
-
-  KnowledgeBaseRolePolicy:
-    Type: AWS::IAM::ManagedPolicy
-    Properties:
-      ManagedPolicyName: !Sub "${AWS::StackName}-kb-policy"
-      Roles:
-        - !Ref KnowledgeBaseRole
+      Queues:
+        - !Ref EmbeddingQueue
       PolicyDocument:
         Version: "2012-10-17"
+        Id: SecureTransportPolicy
         Statement:
-          - Effect: Allow
-            Action:
-              - aoss:APIAccessAll
-            Resource: !GetAtt OSSCollection.Arn
-          - Effect: Allow
-            Action:
-              - s3:GetObject
-              - s3:ListBucket
-            Resource:
-              - !Sub "arn:aws:s3:::${DocumentBucket}"
-              - !Sub "arn:aws:s3:::${DocumentBucket}/*"
-
-  OSSDataAccessPolicy:
-    Type: AWS::OpenSearchServerless::AccessPolicy
-    Properties:
-      Name: !Sub "${AWS::StackName}-data-access"
-      Type: data
-      Description: Data access for KB role
-      Policy: !Sub
-        - '[{"Description":"KB access","Rules":[{"ResourceType":"index","Resource":["index/${CollName}/*"],"Permission":["aoss:*"]},{"ResourceType":"collection","Resource":["collection/${CollName}"],"Permission":["aoss:*"]}],"Principal":["${KBRoleArn}"]}]
-        - CollName: !Sub "${AWS::StackName}-kb-vectors"
-          KBRoleArn: !GetAtt KnowledgeBaseRole.Arn
-    DependsOn: OSSCollection
-
-  KnowledgeBase:
-    Type: AWS::Bedrock::KnowledgeBase
-    Properties:
-      Name: !Sub "${AWS::StackName}-kb"
-      Description: Shared knowledge base for document chat
-      RoleArn: !GetAtt KnowledgeBaseRole.Arn
-      KnowledgeBaseConfiguration:
-        Type: VECTOR
-        VectorKnowledgeBaseConfiguration:
-          EmbeddingModelArn: !Sub "arn:${AWS::Partition}:bedrock:${AWS::Region}::foundation-model/${EmbeddingModelId}"
-      StorageConfiguration:
-        Type: OPENSEARCH_SERVERLESS
-        OpensearchServerlessConfiguration:
-          CollectionArn: !GetAtt OSSCollection.Arn
-          VectorIndexName: pdf-chat-index
-          FieldMapping:
-            VectorField: embedding
-            TextField: text
-            MetadataField: metadata
-    DependsOn: OSSDataAccessPolicy
+          - Sid: AllowSecureTransportOnly
+            Effect: Deny
+            Principal: "*"
+            Action: "SQS:*"
+            Resource: "*"
+            Condition:
+              Bool:
+                aws:SecureTransport: false
 
   DocumentTable:
     Type: AWS::DynamoDB::Table
@@ -273,29 +201,21 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: src/upload_trigger/
-      Timeout: 120
       Policies:
         - DynamoDBCrudPolicy:
             TableName: !Ref DocumentTable
         - DynamoDBCrudPolicy:
             TableName: !Ref MemoryTable
-        - S3CrudPolicy:
-            BucketName: !Ref DocumentBucket
-        - Statement:
-            - Sid: BedrockKnowledgeBase
-              Effect: Allow
-              Action:
-                - bedrock:CreateDataSource
-                - bedrock:StartIngestionJob
-                - bedrock:GetDataSource
-                - bedrock:ListDataSources
-              Resource: !Sub "arn:aws:bedrock:${AWS::Region}:${AWS::AccountId}:knowledge-base/*"
+        - S3ReadPolicy:
+            BucketName: !Sub "${AWS::StackName}-${AWS::Region}-${AWS::AccountId}*"
+        - SQSSendMessagePolicy:
+            QueueName: !GetAtt EmbeddingQueue.QueueName
       Environment:
         Variables:
           DOCUMENT_TABLE: !Ref DocumentTable
           MEMORY_TABLE: !Ref MemoryTable
-          BUCKET: !Ref DocumentBucket
-          KNOWLEDGE_BASE_ID: !Ref KnowledgeBase
+          QUEUE: !GetAtt EmbeddingQueue.QueueName
+          BUCKET: !Sub "${AWS::StackName}-${AWS::Region}-${AWS::AccountId}"
       Events:
         S3Event:
           Type: S3
@@ -369,62 +289,60 @@ Resources:
             Path: /doc/{documentid}
             Method: POST
 
-  CheckIngestionFunction:
+  GenerateEmbeddingsFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: src/check_ingestion/
-      Timeout: 60
-      Events:
-        Schedule:
-          Type: Schedule
-          Properties:
-            Schedule: rate(2 minutes)
+      CodeUri: src/generate_embeddings/
+      Timeout: 180
+      MemorySize: 2048
       Policies:
-        - DynamoDBReadPolicy:
-            TableName: !Ref DocumentTable
+        - SQSPollerPolicy:
+            QueueName: !GetAtt EmbeddingQueue.QueueName
+        - S3CrudPolicy:
+            BucketName: !Ref DocumentBucket
         - DynamoDBCrudPolicy:
             TableName: !Ref DocumentTable
         - Statement:
-            - Sid: BedrockIngestion
-              Effect: Allow
-              Action:
-                - bedrock:GetIngestionJob
-                - bedrock:ListIngestionJobs
-              Resource: !Sub "arn:aws:bedrock:${AWS::Region}:${AWS::AccountId}:knowledge-base/*"
+            - Sid: "BedrockScopedAccess"
+              Effect: "Allow"
+              Action: "bedrock:InvokeModel"
+              Resource: !Sub "arn:aws:bedrock:*::foundation-model/${EmbeddingModelId}"
       Environment:
         Variables:
           DOCUMENT_TABLE: !Ref DocumentTable
-          KNOWLEDGE_BASE_ID: !Ref KnowledgeBase
+          BUCKET: !Ref DocumentBucket
+          EMBEDDING_MODEL_ID: !Ref EmbeddingModelId
+      Events:
+        EmbeddingQueueEvent:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt EmbeddingQueue.Arn
+            BatchSize: 1
 
   GenerateResponseFunction:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: src/generate_response/
-      Timeout: 60
+      Timeout: 30
       MemorySize: 2048
       Policies:
         - DynamoDBCrudPolicy:
             TableName: !Ref MemoryTable
-        - DynamoDBReadPolicy:
-            TableName: !Ref DocumentTable
+        - S3CrudPolicy:
+            BucketName: !Ref DocumentBucket
         - Statement:
-            - Sid: BedrockInvoke
-              Effect: Allow
-              Action: bedrock:InvokeModel
+            - Sid: "BedrockScopedAccess"
+              Effect: "Allow"
+              Action: "bedrock:InvokeModel"
               Resource:
                 - !Sub "arn:aws:bedrock:*::foundation-model/${ModelId}"
-            - Sid: BedrockRetrieve
-              Effect: Allow
-              Action:
-                - bedrock:Retrieve
-                - bedrock:RetrieveAndGenerate
-              Resource: !Sub "arn:aws:bedrock:${AWS::Region}:${AWS::AccountId}:knowledge-base/*"
+                - !Sub "arn:aws:bedrock:*::foundation-model/${EmbeddingModelId}"
       Environment:
         Variables:
           MEMORY_TABLE: !Ref MemoryTable
-          DOCUMENT_TABLE: !Ref DocumentTable
+          BUCKET: !Ref DocumentBucket
           MODEL_ID: !Ref ModelId
-          KNOWLEDGE_BASE_ID: !Ref KnowledgeBase
+          EMBEDDING_MODEL_ID: !Ref EmbeddingModelId
       Events:
         Root:
           Type: Api
@@ -443,20 +361,12 @@ Resources:
         - DynamoDBCrudPolicy:
             TableName: !Ref MemoryTable
         - S3CrudPolicy:
-            BucketName: !Ref DocumentBucket
-        - Statement:
-            - Sid: BedrockDeleteDataSource
-              Effect: Allow
-              Action:
-                - bedrock:DeleteDataSource
-                - bedrock:GetDataSource
-              Resource: !Sub "arn:aws:bedrock:${AWS::Region}:${AWS::AccountId}:knowledge-base/*"
+            BucketName: !Sub "${AWS::StackName}-${AWS::Region}-${AWS::AccountId}*"
       Environment:
         Variables:
           DOCUMENT_TABLE: !Ref DocumentTable
           MEMORY_TABLE: !Ref MemoryTable
-          BUCKET: !Ref DocumentBucket
-          KNOWLEDGE_BASE_ID: !Ref KnowledgeBase
+          BUCKET: !Sub "${AWS::StackName}-${AWS::Region}-${AWS::AccountId}"
       Events:
         Root:
           Type: Api
@@ -518,6 +428,3 @@ Outputs:
     Value: !Ref CognitoUserPoolClient
   ApiGatewayBaseUrl:
     Value: !Sub "https://${Api}.execute-api.${AWS::Region}.${AWS::URLSuffix}/dev/"
-  KnowledgeBaseId:
-    Value: !Ref KnowledgeBase
-    Description: Bedrock Knowledge Base ID for document ingestion

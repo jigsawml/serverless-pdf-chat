@@ -1,149 +1,107 @@
-"""
-Generate chat response using Bedrock Knowledge Base RetrieveAndGenerate,
-filtering by document ID and using DynamoDB for conversation memory.
-"""
 import os
 import json
 import boto3
 from aws_lambda_powertools import Logger
+from langchain.memory import ConversationBufferMemory
+from langchain.chains import ConversationalRetrievalChain
 from langchain_community.chat_message_histories import DynamoDBChatMessageHistory
-from langchain_core.messages import HumanMessage, AIMessage
+from langchain_community.vectorstores import FAISS
+from langchain_aws.chat_models import ChatBedrock
+from langchain_aws.embeddings import BedrockEmbeddings
+
 
 MEMORY_TABLE = os.environ["MEMORY_TABLE"]
-DOCUMENT_TABLE = os.environ["DOCUMENT_TABLE"]
+BUCKET = os.environ["BUCKET"]
 MODEL_ID = os.environ["MODEL_ID"]
-KNOWLEDGE_BASE_ID = os.environ["KNOWLEDGE_BASE_ID"]
+EMBEDDING_MODEL_ID = os.environ["EMBEDDING_MODEL_ID"]
 
-ddb = boto3.resource("dynamodb")
-bedrock_agent_runtime = boto3.client("bedrock-agent-runtime")
+s3 = boto3.client("s3")
 logger = Logger()
 
 
-def get_document(user_id, document_id):
-    table = ddb.Table(DOCUMENT_TABLE)
-    resp = table.get_item(Key={"userid": user_id, "documentid": document_id})
-    return resp.get("Item")
-
-
-def get_conversation_context(conversation_id, last_n=5):
-    """Build a short context string from recent messages for the model."""
-    history = DynamoDBChatMessageHistory(
-        table_name=MEMORY_TABLE,
-        session_id=conversation_id,
+def get_embeddings():
+    bedrock_runtime = boto3.client(
+        service_name="bedrock-runtime",
+        region_name="us-east-1",
     )
-    messages = history.messages
-    if not messages or last_n <= 0:
-        return ""
-    recent = messages[-last_n * 2 :]  # pairs of human/ai
-    parts = []
-    for m in recent:
-        if hasattr(m, "content"):
-            role = "User" if isinstance(m, HumanMessage) else "Assistant"
-            parts.append(f"{role}: {m.content}")
-    if not parts:
-        return ""
-    return "Previous conversation:\n" + "\n".join(parts) + "\n\n"
 
-
-def save_messages(conversation_id, human_input, model_output):
-    history = DynamoDBChatMessageHistory(
-        table_name=MEMORY_TABLE,
-        session_id=conversation_id,
+    embeddings = BedrockEmbeddings(
+        model_id=EMBEDDING_MODEL_ID,
+        client=bedrock_runtime,
+        region_name="us-east-1",
     )
-    history.add_user_message(human_input)
-    history.add_ai_message(model_output)
+    return embeddings
 
+def get_faiss_index(embeddings, user, file_name):
+    s3.download_file(BUCKET, f"{user}/{file_name}/index.faiss", "/tmp/index.faiss")
+    s3.download_file(BUCKET, f"{user}/{file_name}/index.pkl", "/tmp/index.pkl")
+    faiss_index = FAISS.load_local("/tmp", embeddings, allow_dangerous_deserialization=True)
+    return faiss_index
 
-def retrieve_and_generate_response(document_id, question, conversation_context=""):
-    """Call Bedrock RetrieveAndGenerate with filter on documentid."""
-    if conversation_context:
-        augmented_input = conversation_context + "Current question: " + question
-    else:
-        augmented_input = question
+def create_memory(conversation_id):
+    message_history = DynamoDBChatMessageHistory(
+        table_name=MEMORY_TABLE, session_id=conversation_id
+    )
 
-    retrieval_filter = {
-        "equals": {"key": "documentid", "value": document_id},
-    }
-    request = {
-        "input": {"text": augmented_input},
-        "retrieveAndGenerateConfiguration": {
-            "type": "KNOWLEDGE_BASE",
-            "knowledgeBaseConfiguration": {
-                "knowledgeBaseId": KNOWLEDGE_BASE_ID,
-                "modelArn": f"arn:aws:bedrock:{os.environ.get('AWS_REGION', 'us-east-1')}::foundation-model/{MODEL_ID}",
-                "retrievalConfiguration": {
-                    "vectorSearchConfiguration": {
-                        "numberOfResults": 5,
-                        "filter": retrieval_filter,
-                    }
-                },
-                "generationConfiguration": {
-                    "temperature": 0.0,
-                },
-            },
-        },
-    }
-    response = bedrock_agent_runtime.retrieve_and_generate(**request)
-    output = response.get("output", {})
-    text = output.get("text", "")
-    return text.strip()
+    memory = ConversationBufferMemory(
+        memory_key="chat_history",
+        chat_memory=message_history,
+        input_key="question",
+        output_key="answer",
+        return_messages=True,
+    )
+    return memory
 
+def bedrock_chain(faiss_index, memory, human_input, bedrock_runtime):
+
+    chat = ChatBedrock(
+        model_id=MODEL_ID,
+        model_kwargs={'temperature': 0.0}
+    )
+
+    chain = ConversationalRetrievalChain.from_llm(
+        llm=chat,
+        chain_type="stuff",
+        retriever=faiss_index.as_retriever(),
+        memory=memory,
+        return_source_documents=True,
+    )
+
+    response = chain.invoke({"question": human_input})
+
+    return response
 
 @logger.inject_lambda_context(log_event=True)
 def lambda_handler(event, context):
-    body = event.get("body") or "{}"
-    if isinstance(body, str):
-        body = json.loads(body)
-    file_name = body.get("fileName", "")
-    human_input = body.get("prompt", "")
-    document_id = event["pathParameters"]["documentid"]
+    event_body = json.loads(event["body"])
+    file_name = event_body["fileName"]
+    human_input = event_body["prompt"]
     conversation_id = event["pathParameters"]["conversationid"]
-    user_id = event["requestContext"]["authorizer"]["claims"]["sub"]
+    user = event["requestContext"]["authorizer"]["claims"]["sub"]
 
-    document = get_document(user_id, document_id)
-    if not document:
-        return {
-            "statusCode": 404,
-            "headers": _cors_headers(),
-            "body": json.dumps({"error": "Document not found"}),
-        }
+    embeddings = get_embeddings()
+    faiss_index = get_faiss_index(embeddings, user, file_name)
+    memory = create_memory(conversation_id)
+    bedrock_runtime = boto3.client(
+        service_name="bedrock-runtime",
+        region_name="us-east-1",
+    )
 
-    docstatus = document.get("docstatus", "")
-    if docstatus != "READY":
-        return {
-            "statusCode": 400,
-            "headers": _cors_headers(),
-            "body": json.dumps(
-                {"error": "Document is not ready for chat yet. Status: " + docstatus}
-            ),
-        }
+    response = bedrock_chain(faiss_index, memory, human_input, bedrock_runtime)
+    if response:
+        print(f"{MODEL_ID} -\nPrompt: {human_input}\n\nResponse: {response['answer']}")
+    else:
+        raise ValueError(f"Unsupported model ID: {MODEL_ID}")
 
-    conversation_context = get_conversation_context(conversation_id)
-    try:
-        answer = retrieve_and_generate_response(
-            document_id, human_input, conversation_context
-        )
-    except Exception as e:
-        logger.exception("RetrieveAndGenerate failed", extra={"error": str(e)})
-        return {
-            "statusCode": 500,
-            "headers": _cors_headers(),
-            "body": json.dumps({"error": "Failed to generate response"}),
-        }
-
-    save_messages(conversation_id, human_input, answer)
+    logger.info(str(response['answer']))
 
     return {
         "statusCode": 200,
-        "headers": _cors_headers(),
-        "body": json.dumps(answer),
-    }
-
-
-def _cors_headers():
-    return {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Headers": "*",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "*",
+        "headers": {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "*",
+        },
+        "body": json.dumps(response['answer']),
     }
